@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        let score = 0;
 
         function getComputerChoice() {
             let choices = ['Rock', 'Paper', 'Scissors'];
@@ -16,36 +17,47 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-            if (playerSelection == computerSelection){
-                return('It\'s a mother flippi\'n tie');
-            } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
-                return('You win this round. Rock smashes scissors!');
-                wins++;
-            } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-                return('You win this round. Paper covers rock!');
-                wins++;
-            } else if (playerSelection === 'scissors' && computerSelection == 'paper'){
-                return('You win this round. Scissors cuts paper!');
-                wins++;
-            } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-                return('You lose this round. Scissors cuts paper!');
-                losses++;
-            } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-                return('You lose this round. Rock covers paper!');
-                losses++;
-            } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-                return('You lose this round. Rock smashes scissors!');
-                losses++;
+            if (
+                (playerSelection == 'rock' && computerSelection == 'scissors') ||
+                (playerSelection == 'paper' && computerSelection == 'rock') ||
+                (playerSelection == 'scissors' && computerSelection == 'paper')) {
+                    console.log('You won');
+                    score ++;
+            } else if (playerSelection == computerSelection) {
+                console.log('DRAW');
+            } else if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissor') || (playerSelection == '')) {
+                    console.log('ERROR: rock, paper, nor scissors entered. Game not registered.');
             } else {
-                if (playerSelection != 'rock', playerSelection != 'scissors', playerSelection != 'paper') {
-                    return('You have not chosen a possible answer.');
-                    i--;
-                }
+                console.log('Computer Won');
             }
         }
 
         function game() {
-            
+            for(let i = 0; i < 5; i++) {
+                const playerSelection = window.prompt("Outsmart the computer in a game of Rock Paper Scissors! Best of 5 games win, and draws do not count toward game total. Please enter: rock paper or scissors").toLowerCase();
+                const computerSelection = getComputerChoice().toLowerCase();
+
+                if (playerSelection == computerSelection) {
+                i--;
+                }
+
+                if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissor') || (playerSelection == '')) {
+                    i--;
+                }
+
+                console.log("The computer chose: " + computerSelection);
+                console.log("You chose: " + playerSelection);
+                playRound(playerSelection, computerSelection);
+            }
+        }
+
+        game();
+        console.log ('Your score was ' + score + '/5');
+        let results = score;
+        if (results >= 3) {
+            console.log('You beat the computer!');
+        } else {
+            console.log('You lost!');
         }
 
     </script>
