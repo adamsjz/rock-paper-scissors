@@ -36,7 +36,7 @@
 
         function game() {
             for(let i = 0; i < 5; i++) {
-                const playerSelection = window.prompt("Outsmart the computer in a game of Rock Paper Scissors! Whoever has the highest score after 5 games wins! Please enter: rock paper or scissors").toLowerCase();
+                const playerSelection = window.prompt("Outsmart the computer in a game of Rock Paper Scissors! Whoever has the highest score after 5 games wins! Draws count as round but do not count as points for the user nor the computer. Please enter: rock paper or scissors").toLowerCase();
                 const computerSelection = getComputerChoice().toLowerCase();
 
                 if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') || (playerSelection == '')) {
