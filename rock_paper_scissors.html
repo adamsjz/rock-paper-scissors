@@ -26,7 +26,7 @@
                     userScore ++;
             } else if (playerSelection == computerSelection) {
                 console.log('DRAW');
-            } else if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissor') || (playerSelection == '')) {
+            } else if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') || (playerSelection == '')) {
                     console.log('ERROR: rock, paper, nor scissors entered. Game not registered.');
             } else {
                 console.log('Computer Won');
@@ -36,10 +36,10 @@
 
         function game() {
             for(let i = 0; i < 5; i++) {
-                const playerSelection = window.prompt("Outsmart the computer in a game of Rock Paper Scissors! Best of 5 games win, and draws do not count toward game total. Please enter: rock paper or scissors").toLowerCase();
+                const playerSelection = window.prompt("Outsmart the computer in a game of Rock Paper Scissors! Whoever has the highest score after 5 games wins! Please enter: rock paper or scissors").toLowerCase();
                 const computerSelection = getComputerChoice().toLowerCase();
 
-                if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissor') || (playerSelection == '')) {
+                if ((playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') || (playerSelection == '')) {
                 i --;
             }
 
