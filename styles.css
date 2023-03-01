@@ -11,7 +11,7 @@ body {
     text-shadow: 0 0 7px rgb(93, 109, 245);
   }
   .header {
-    color: #010101;
+    color: #ffffff;
     text-shadow: 0 0 7px rgb(93, 109, 245);
     background: linear-gradient(to right,#d396ff, #74ffd1, #d396ff, #74ffd1, #d396ff);
     display: flex;
@@ -74,17 +74,28 @@ body {
     width: 100%;
   }
   .reset {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 60px;
-    background-color: rgba(0, 255, 255, 0.507);
-    color: black;
-    font-size: x-large;
-    border: 1px solid black;
-    border-radius: 5px;
+    background: hsl(172, 100%, 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
   }
+
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(169, 100%, 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .reset:active .front {
+    transform: translateY(-2px);
+  }
+
   .reset:hover {
     cursor: pointer;
   }
