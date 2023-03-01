@@ -103,4 +103,8 @@ body {
     position: relative;
     margin-top: 10px;
     padding: 7px;
-}
+  }
+  a {
+    color:#74ffd1;
+    text-decoration: none;
+  }
